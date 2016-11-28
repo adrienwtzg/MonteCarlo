@@ -1,0 +1,11 @@
+#StartDiv{
+    /* position de la Div */
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    /* Bordure */
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+}
