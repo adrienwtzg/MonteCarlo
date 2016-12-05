@@ -8,7 +8,7 @@
     </head>
     <body>
       <div id="StartDiv"> <!-- Cadre -->
-        <canvas id="canvas1" width="700" height="700">
+        <canvas id="Cercle" width="700" height="700">
       </div>
       <script>
         //Variables
@@ -54,6 +54,7 @@
         StartPoints();
         circle();
 
+
         function StartPoints(){
               for (var i = 0; i < 1000; i++) {
                 new Point();
@@ -65,16 +66,18 @@
               objet.element.style.top = objet.posY + "px";
             }
 
-            function circle()
-            {
-              var canvas = document.getElementById("canvas1");
+        function circle(){
+              var canvas = document.getElementById("Cercle");
               var context = canvas.getContext("2d");
               context.beginPath();
               context.lineWidth="2";
               context.arc(350, 350, 350, 0, 2 * Math.PI);
+              context.moveTo(350,0);
+              context.lineTo(350,700);
+              context.moveTo(0,350);
+              context.lineTo(700,350);
               context.stroke();
             }
-
 
         function Execution(){
           for (var i = 0; i < ToutLesEtres.points.length; i++) {
