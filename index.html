@@ -7,19 +7,20 @@
         <link href=".\style.css" rel="stylesheet"/>
     </head>
     <body>
-      <div id="StartDiv">
+      <div id="StartDiv"> <!-- Cadre -->
       </div>
       <script>
 
         var ScreenSizeWidth = screen.width; // Largeur de l'écran
         var ScreenSizeHeight = screen.height; // Longeur de l'écran
 
+        //Génère une Zone à partir de StartDiv
         Zone = {largeur: ScreenSizeWidth - 200,
                 hauteur: ScreenSizeHeight - 300,
                 element: document.getElementById("StartDiv")};
 
-        Zone.element.style.width = Zone.largeur + "px";// Set la largeur de StartDiv
-        Zone.element.style.height = Zone.hauteur + "px";// Set la longueur de StartDiv
+        Zone.element.style.width = Zone.largeur + "px"; // Set la largeur de StartDiv
+        Zone.element.style.height = Zone.hauteur + "px"; // Set la longueur de StartDiv
 
       </script>
     </body>
