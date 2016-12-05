@@ -10,13 +10,12 @@
       <div id="StartDiv"> <!-- Cadre -->
       </div>
       <script>
+        //Variables
 
-        var ScreenSizeWidth = screen.width; // Largeur de l'écran
-        var ScreenSizeHeight = screen.height; // Longeur de l'écran
 
         //Génère une Zone à partir de StartDiv
-        Zone = {largeur: ScreenSizeWidth - 200,
-                hauteur: ScreenSizeHeight - 300,
+        Zone = {largeur: 700,
+                hauteur: 700,
                 element: document.getElementById("StartDiv")};
 
         Zone.element.style.width = Zone.largeur + "px"; // Set la largeur de StartDiv
