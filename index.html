@@ -18,8 +18,67 @@
                 hauteur: 700,
                 element: document.getElementById("StartDiv")};
 
+        ToutLesEtres = {points: []};
+
+        class Chose {
+              constructor(){
+                this.posX = Math.floor(Math.random() * (Zone.largeur - 20 - 10) + 10);
+                this.posY =  Math.floor(Math.random() * (Zone.hauteur - 20 - 10) + 10);
+              }
+
+              Supprimer(){
+                this.element.parentNode.removeChild(this.element);
+              }
+            }
+
+        class Point extends Chose {
+          constructor(){
+            super();
+            this.taille = 1;
+            var nouveauDiv = document.createElement("div");
+            nouveauDiv.id = "Point"+ToutLesEtres.points.length;
+            Zone.element.appendChild(nouveauDiv);
+            this.element = document.getElementById(nouveauDiv.id);
+            this.element.style.position = "absolute";
+            this.element.style.border = "0.2px black solid";
+            this.element.style.width = this.taille + "px";
+            this.element.style.height = this.taille + "px";
+            ToutLesEtres.points.push(this);
+          }
+        }
+
         Zone.element.style.width = Zone.largeur + "px"; // Set la largeur de StartDiv
         Zone.element.style.height = Zone.hauteur + "px"; // Set la longueur de StartDiv
+
+        StartPoints();
+
+
+        function StartPoints(){
+              for (var i = 0; i < 1000; i++) {
+                new Point();
+              }
+            }
+
+        function Affiche(objet){
+              objet.element.style.left = objet.posX + "px";
+              objet.element.style.top = objet.posY + "px";
+            }
+
+        function Execution(){
+          for (var i = 0; i < ToutLesEtres.points.length; i++) {
+                Affiche(ToutLesEtres.points[i]);
+              }
+        } setInterval(Execution, 10);
+
+
+
+
+
+
+
+
+
+
 
       </script>
     </body>
