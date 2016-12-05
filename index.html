@@ -8,6 +8,7 @@
     </head>
     <body>
       <div id="StartDiv"> <!-- Cadre -->
+        <canvas id="canvas1" width="700" height="700">
       </div>
       <script>
         //Variables
@@ -51,7 +52,7 @@
         Zone.element.style.height = Zone.hauteur + "px"; // Set la longueur de StartDiv
 
         StartPoints();
-
+        circle();
 
         function StartPoints(){
               for (var i = 0; i < 1000; i++) {
@@ -63,6 +64,17 @@
               objet.element.style.left = objet.posX + "px";
               objet.element.style.top = objet.posY + "px";
             }
+
+            function circle()
+            {
+              var canvas = document.getElementById("canvas1");
+              var context = canvas.getContext("2d");
+              context.beginPath();
+              context.lineWidth="2";
+              context.arc(350, 350, 350, 0, 2 * Math.PI);
+              context.stroke();
+            }
+
 
         function Execution(){
           for (var i = 0; i < ToutLesEtres.points.length; i++) {
